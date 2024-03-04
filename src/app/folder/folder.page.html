@@ -40,8 +40,7 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col> <ion-label>End Date</ion-label>
-    </ion-col>
+    <ion-col> <ion-label>End Date</ion-label></ion-col>
     <ion-col>
       <ion-datetime-button datetime="endDate"></ion-datetime-button>
       <ion-modal [keepContentsMounted]="true">
@@ -49,6 +48,21 @@
           <ion-datetime id="endDate" [(ngModel)]="end"></ion-datetime>
         </ng-template>
       </ion-modal>
+    </ion-col>
+
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col> <ion-label>Box dimensions in inches</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-input [(ngModel)]="length"></ion-input>
+      <ion-input [(ngModel)]="width"></ion-input>
+      <ion-input [(ngModel)]="depth"></ion-input>
+      <ion-button (click)="calculate()">calculate</ion-button>
+      <ion-col> <ion-label>square feet: {{total}}</ion-label></ion-col>
+
     </ion-col>
 
   </ion-row>
