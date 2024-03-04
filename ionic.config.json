@@ -1,0 +1,7 @@
+{
+  "name": "ServiceManagement",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
