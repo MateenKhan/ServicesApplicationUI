@@ -1,13 +1,14 @@
-<!-- <ion-header [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <!-- <ion-title>{{ folder }}</ion-title> -->
+    <ion-title>Estimate</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
@@ -15,37 +16,44 @@
   </ion-header>
 
   <div id="container">
-    <!-- <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
-<!-- <ion-datetime></ion-datetime> 
+    <strong class="capitalize">{{ folder }}</strong>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
+        Components</a></p>
+    <ion-datetime></ion-datetime>
 
 
-</div>
+  </div>
 </ion-content> -->
 
-<ion-grid [fixed]="true">
+
+<ion-content [fullscreen]="true">
   <ion-row>
     <ion-col> <ion-label position="stacked">Start Date</ion-label>
     </ion-col>
-    <ion-col><ion-item>
-        <ion-input value="{{ start | date: 'dd-MMM-yyyy HH:mm' }}" id="startDate"></ion-input>
-        <ion-popover trigger="startDate">
-          <ng-template>
-            <ion-datetime [(ngModel)]="start" locale="en-US"></ion-datetime>
-          </ng-template>
-        </ion-popover>
-      </ion-item></ion-col>
+    <ion-col>
+      <ion-datetime-button datetime="startDate"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="startDate" [(ngModel)]="start"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col> <ion-label position="stacked">End Date</ion-label>
+    <ion-col> <ion-label>End Date</ion-label>
     </ion-col>
-    <ion-col><ion-item>
-        <ion-input value="{{ end | date: 'dd-MMM-yyyy HH:mm' }}" id="endDate"></ion-input>
-        <ion-popover trigger="endDate">
-          <ng-template>
-            <ion-datetime [(ngModel)]="end" locale="en-US"></ion-datetime>
-          </ng-template>
-        </ion-popover>
-      </ion-item></ion-col>
+    <ion-col>
+      <ion-datetime-button datetime="endDate"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="endDate" [(ngModel)]="end"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-col>
+
   </ion-row>
-</ion-grid>
+
+
+
+
+</ion-content>
