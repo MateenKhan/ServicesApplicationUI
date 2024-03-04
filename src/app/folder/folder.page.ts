@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class FolderPage implements OnInit {
   public folder!: string;
   private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
+  public start!: string;
+  public end!: string;
+  constructor() { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
